@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Valentine JANU ❤️</title>
+<style>
+body{
+    margin:0;
+    padding:0;
+    background:linear-gradient(to top right,#ff9a9e,#fad0c4);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+    font-family: 'Segoe UI', cursive;
+}
+
+/* Envelope */
+.envelope{
+    position:relative;
+    width:300px;
+    height:200px;
+    background:#ff4d6d;
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.5s;
+}
+
+.envelope:before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    border-left:150px solid transparent;
+    border-right:150px solid transparent;
+    border-top:100px solid #ff758f;
+    transform-origin:top;
+    transition:0.5s;
+}
+
+.envelope.open:before{
+    transform:rotateX(180deg);
+}
+
+.letter{
+    position:absolute;
+    width:90%;
+    height:180%;
+    background:white;
+    top:10px;
+    left:5%;
+    padding:20px;
+    box-sizing:border-box;
+    overflow:auto;
+    transform:translateY(100%);
+    transition:0.8s;
+    border-radius:5px;
+}
+
+.envelope.open .letter{
+    transform:translateY(-60%);
+}
+
+/* Floating Hearts */
+.heart{
+    position:absolute;
+    color:red;
+    font-size:20px;
+    animation:float 6s linear infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(0) scale(1); opacity:1;}
+    100%{transform:translateY(-800px) scale(1.5); opacity:0;}
+}
+
+/* Floating Roses */
+.rose{
+    position:absolute;
+    font-size:22px;
+    animation:float 8s linear infinite;
+}
+
+button{
+    position:absolute;
+    bottom:20px;
+    padding:10px 20px;
+    border:none;
+    background:#fff;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:bold;
+}
+</style>
+</head>
+<body>
+
+<div class="envelope" onclick="openEnvelope(this)">
+    <div class="letter">
+        <h2 style="color:#ff4d6d;">Happy Valentine Day JANU ❤️</h2>
+        <p>
+        My Valentine, My LOVE, Our First Valentine 💖<br><br>
+
+        My first Valentine with my most gorgeous, extremely beautiful 
+        God’s special creation — my GIRLFRIEND (meri BABY, meri JANU).  
+        Even if we are miles away, we mark this day as we move forward 
+        supporting each other, holding each other, irritating each other,
+        fighting hehe, you kick me slap me but it’s worth it when it's from you 😌❤️<br><br>
+
+        Thank you for being my better half, the most cutieeeesss, 
+        onek shundorrrrr girlfriend, my bebe 💕  
+        I promise to irritate you, love you loudly, and let my heart 
+        beat only for you.  
+
+        When I think of you, my smile touches my ears and my heartbeat 
+        plays every romantic song on this planet 🎶💓<br><br>
+
+        I want to hold you, kiss you, walk with you, watch movies on 
+        chill Friday nights, lay on the sofa together and do all 
+        the possible beautiful things in this world together 💞<br><br>
+
+        My love, my sunshine, my baby girl, my pookie, my cutie pie, 
+        my kuchubuchu, my roshogola, my everything —  
+        Ami tomake onek bhalobashi meri januuuuu 💗🌹<br><br>
+
+        Yours loving over-hyped crazy lover boy,<br>
+        <b>Obang (aka Rionas Bubu)</b>
+        </p>
+    </div>
+</div>
+
+<button onclick="createLove()">Spread Love 💕</button>
+
+<script>
+function openEnvelope(el){
+    el.classList.toggle("open");
+}
+
+function createLove(){
+    for(let i=0;i<20;i++){
+        let heart=document.createElement("div");
+        heart.className="heart";
+        heart.innerHTML="❤️";
+        heart.style.left=Math.random()*100+"vw";
+        heart.style.animationDuration=(3+Math.random()*3)+"s";
+        document.body.appendChild(heart);
+        setTimeout(()=>heart.remove(),6000);
+
+        let rose=document.createElement("div");
+        rose.className="rose";
+        rose.innerHTML="🌹";
+        rose.style.left=Math.random()*100+"vw";
+        rose.style.animationDuration=(4+Math.random()*4)+"s";
+        document.body.appendChild(rose);
+        setTimeout(()=>rose.remove(),8000);
+    }
+}
+</script>
+
+</body>
+</html>
